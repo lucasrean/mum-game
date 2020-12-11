@@ -1,0 +1,38 @@
+
+class Question:
+     def __init__(self, prompt, answer):
+          self.prompt = prompt
+          self.answer = answer
+
+question_prompts = [
+     "Wie ist der Name, den du Juna öfter gibst?\n(a) Marifi\n(b)Maribo",
+     "What color are bananas?\n(a) Red/Green\n(b)Yellow",
+     "Welche Farbe haben Juna Maries Haar?\n(a) Blond\n(b)Braun",
+     " Wie viele lange Hosen besitzt Papa?\n(a)10\n(b) 14",
+     " Wie viele 4en in der Schule hat Lucas bis jetzt geschrieben?\n(a)6\n(b)2",
+     " Wie viele 3en hatte Juna bis jetzt in der Schule?\n(a)0\n(b)1 "
+     "Wer war im Studium der beste Freund von Papa?\n(a)Baschi\n(b)Kai"
+
+]
+
+questions = [
+     Question(question_prompts[0], "b"),
+     Question(question_prompts[1], "a"),
+     Question(question_prompts[2], "a"),
+     Question(question_prompts[3], "a"),
+     Question(question_prompts[4], "b"),
+     Question(question_prompts[5], "a"),
+     Question(question_prompts[6], "a"),
+     
+
+]
+
+def run_quiz(questions):
+     score = 0
+     for question in questions:
+          answer = input(question.prompt)
+          if answer == question.answer:
+               score += 1
+     print("du hast", score, "von", len(questions))
+
+run_quiz(questions)
